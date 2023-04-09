@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template</title>
+    <script src="https://kit.fontawesome.com/8d92229b07.js" crossorigin="anonymous"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .head {
+            position: relative;
+        }
+
+        /*menubar*/
+        .menubar {
+            width: 20%;
+            position: fixed;
+            height: 100vh;
+            background-color: rgb(57, 62, 66);
+            border-right: 1px solid white;
+        }
+
+        .menubar>div {
+            padding: 30px 0px;
+        }
+
+        .menubar img {
+            min-width: 100%;
+            height: auto;
+        }
+
+        nav div {
+            background-color: rgba(0, 0, 0, 0.226);
+            text-align: center;
+            font-size: smaller;
+            padding: 10px 0px;
+            border: solid rgb(75, 80, 86) 1px;
+        }
+
+        nav div:first-child {
+            border-left: solid 5px skyblue;
+        }
+
+        nav div:nth-child(2) {
+            border-left: solid 5px orange;
+        }
+
+        nav div:nth-child(3) {
+            border-left: solid 5px violet;
+        }
+
+        nav div:nth-child(4) {
+            border-left: solid 5px lightgreen;
+        }
+
+        nav div:nth-child(5) {
+            border-left: solid 5px red;
+        }
+
+
+        nav a {
+            text-decoration: none;
+            color: white;
+        }
+
+
+        /*menubar*/
+
+        .content {
+            width: 80%;
+            position: absolute;
+            right: 0;
+            background-color: white;
+        }
+
+        .sec {
+            position: relative;
+        }
+
+        .image {
+            position: relative;
+        }
+
+        .image img {
+            display: block;
+            position: relative;
+            top: 0;
+        }
+
+        .image>img~div {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .sec>div:nth-child(2) {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+        }
+
+        .sec>div:nth-child(2) h4 {
+            font-weight: 200;
+            line-height: 1.5;
+        }
+
+        .sec>div:nth-child(2) button {
+            color: white;
+            background-color: rgb(9, 160, 220);
+            padding: 10px 25px;
+            border: none;
+        }
+
+        .radioalign {
+            position: absolute;
+            bottom: 10%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        input[type="radio"] {
+            accent-color: white;
+        }
+
+        .about {
+            display: grid;
+            grid-template-columns: 80%;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .about h2 {
+            color: rgb(56, 169, 227);
+            font-weight: 200;
+        }
+
+        p {
+            color: rgb(155, 152, 155);
+        }
+
+        .about span {
+            color: rgb(56, 169, 227);
+        }
+
+        .box {
+            width: 80%;
+            margin: auto;
+        }
+
+        hr {
+            margin: 0;
+            border: 3px solid rgb(233, 177, 68);
+        }
+
+        .button {
+            color: white;
+            background-color: rgb(233, 177, 68);
+            border: none;
+            padding: 10px 20px
+        }
+
+        .flex {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 3rem 0rem;
+            text-align: center;
+        }
+
+        .flex>div {
+            width: 30%;
+        }
+
+        .flex h5 {
+            margin: 15px 0px;
+            color: rgb(233, 177, 68);
+            font-size: 1rem;
+        }
+
+        .flex h6 {
+            margin-top: 0;
+            color: rgb(210 203 210);
+        }
+
+        .manage {
+            display: grid;
+            grid-template-columns: 65% 30%;
+            justify-content: space-between;
+        }
+
+        .management>div:first-child {
+            font-size: large;
+            color: rgb(233, 177, 68);
+        }
+
+        .skill hr {
+            border: 3px solid rgb(152 76 234);
+        }
+
+        .skill button {
+            background-color: rgb(152 76 234);
+        }
+
+        .known {
+            background-color: rgb(152 76 234);
+            padding: 20px 10px;
+        }
+
+        .known p {
+            display: inline-block;
+            margin: 0;
+            color: white;
+            font-size: medium;
+        }
+
+        .known i {
+            color: white;
+        }
+
+        .skillpara>div:first-child {
+            font-size: large;
+            color: rgb(152 76 234);
+        }
+
+        .positionskill>div {
+            box-shadow: 0 0 5px 2px #c7c5c5;
+            width: 100%;
+            background-color: #f2f2f2;
+            text-align: center;
+            font-size: x-small;
+            color: white;
+            margin: 20px 0px;
+        }
+
+        .positionskill>div:first-child>div {
+            width: 90%;
+            background-color: hsl(269.41deg 75.37% 60.2%);
+            padding: 5px 0px;
+        }
+
+        .positionskill>div:nth-child(2)>div {
+            width: 75%;
+            background-color: hsl(269.41deg 75.37% 60.2%);
+            padding: 5px 0px;
+        }
+
+        .positionskill>div:nth-child(3)>div {
+            width: 72%;
+            background-color: hsl(269.41deg 75.37% 60.2%);
+            padding: 5px 0px;
+        }
+
+        .positionskill>div:last-child>div {
+            width: 88%;
+            background-color: hsl(269.41deg 75.37% 60.2%);
+            padding: 5px 0px;
+        }
+
+        .portfolio hr {
+            border: 3px solid rgb(56 227 149);
+        }
+
+        .portfolio button {
+            background-color: rgb(56 227 149);
+        }
+
+        .portfolio p {
+            color: rgb(56 227 149);
+        }
+
+        .portfolio>div:last-child {
+            text-align: center;
+        }
+
+        .contact {
+            padding: 30px 0px;
+        }
+
+        .contact hr {
+            border: 3px solid rgb(231 55 126);
+        }
+
+        .contact button {
+            background-color: rgb(231 55 126);
+        }
+
+        label {
+            display: block;
+        }
+
+        .map {
+            margin: 20px 0px;
+            position: relative;
+            border: 5px solid rgba(97, 97, 97, 0.29);
+            cursor: pointer;
+        }
+
+        input[type="checkbox"] {
+            display: none;
+        }
+
+        #google:checked~label .display {
+            display: block;
+        }
+
+        .display {
+            position: absolute;
+            top: 10px;
+            width: 40%;
+            left: 50%;
+            background-color: white;
+            border-radius: 10px;
+            padding: 15px;
+            transform: translate(-50%);
+            display: none;
+        }
+
+        .display>div {
+            display: grid;
+            grid-template-columns: 70% 20%;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .display h4 {
+            margin: 0;
+            color: grey;
+        }
+
+        .display p {
+            color: black;
+            font-size: smaller;
+        }
+
+        .display>div>p {
+            margin: 0;
+            font-size: small;
+            color: gray;
+        }
+
+        .display>div>button {
+            display: inline-block;
+            background-color: transparent;
+            color: blue;
+            border: 1px solid grey;
+            padding: 8px 10px;
+            border-radius: 5px;
+        }
+
+        .red {
+            position: relative;
+            top: 0;
+        }
+
+        .red~.bg {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .red~.rightside {
+            position: absolute;
+            top: 4px;
+            right: 4px;
+        }
+
+        .red~.bottomup {
+            position: absolute;
+            bottom: 26px;
+            right: 4px;
+        }
+
+        .red~.bottom {
+            position: absolute;
+            bottom: 4px;
+            right: 4px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 30% 30% 30%;
+            justify-content: space-between;
+            margin-top: 3rem;
+        }
+
+        .grid label,
+        .dist label {
+            font-size: small;
+            color: rgb(186, 186, 186);
+        }
+
+        .grid span,
+        .dist span {
+            color: red;
+        }
+
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0px;
+            border: 1px solid rgb(186, 186, 186);
+        }
+
+        .dist {
+            margin: 20px 0px;
+        }
+
+        .end {
+            background-color: rgb(75 80 86);
+            border-left: 3px solid rgb(49 54 58);
+            padding-top: 50px;
+        }
+
+        .endbox {
+            width: 15%;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding-bottom: 50px;
+        }
+
+        .endbox div {
+            width: 15%;
+            background-color: rgb(49 54 58);
+            padding: 6px 22px 5px 7px
+        }
+
+        .endbox i {
+            color: white;
+
+        }
+
+        .foot {
+            padding: 20px 0px;
+            background-color: rgb(49 54 58);
+            font-size: small;
+        }
+
+        .foot span {
+            color: white;
+        }
+
+        @media screen and (max-width:576px) {}
+    </style>
+
+
+</head>
+
+<body>
+    <div class="head">
+        <div class="menubar">
+            <div><img src="images/flomic.jpeg" alt="logo" /></div>
+            <nav>
+                <div><a href="#home">HOME</a></div>
+                <div><a href="#about-us">ABOUT US</a></div>
+                <div><a href="#services">SERVICES</a></div>
+                <div><a href="#portfolio">PORTFOLIO</a></div>
+                <div><a href="#contact">CONTACT</a></div>
+            </nav>
+        </div>
+        <div class="content">
+            <div class="sec" id="home">
+                <div class="image">
+                    <img src="images/main.jpg" alt="">
+                    <div></div>
+                </div>
+                <div>
+                    <h1>RESPONSIVE LAYOUT</h1>
+                    <h4>PELLENTESQUE HABITANT MORBI TRISTIQUE SENECTUS ET NETUS ET MALESUADA FAMES.</h4>
+                    <button>READ MORE</button>
+                </div>
+                <div class="radioalign">
+                    <input type="radio" name="slide" checked>
+                    <input type="radio" name="slide" checked>
+                    <input type="radio" name="slide" checked>
+                </div>
+            </div>
+            <div class="about">
+                <div>
+                    <h2>WELCOME TO TEMPLATE</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. <span>In voluptatem quisquam</span>,
+                        esse ut, laboriosam ea autem ullam, iste ex qui placeat impedit. Accusamus odit, quo sed eos
+                        eius corporis veritatis.</p>
+                </div>
+            </div>
+            <div class="welcome box">
+                <hr>
+                <button class="button" id="about-us">ABOUT US</button>
+                <div class="flex">
+                    <div>
+                        <img src="images/r1.avif" alt="" />
+                        <h5>CHRISTINA WELLDONE</h5>
+                        <h6>Marketing Director</h6>
+                    </div>
+                    <div>
+                        <img src="images/r2.avif" alt="" />
+                        <h5>TERI BELLE</h5>
+                        <h6>Creative Executive </h6>
+                    </div>
+                    <div>
+                        <img src="images/r3.avif" alt="" />
+                        <h5>TAWANA CHERRY</h5>
+                        <h6>Company Director</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="manage box">
+                <div class="management">
+                    <div>OUR MANAGEMENT TEAM</div>
+                    <p>
+                        This is a mobile website template which can be viewed in mobile devices. Quisque in metus
+                        tristique, gravida dolor ut, varius neque . Maecenas ac risus aliquam, facilisis massa id,
+                        vulputate elit. Curabitur pretium arcu dictum, facubius diam quis, commodo turpis, proin vivera,
+                        risus eget egestas sodales, felis ante scelensique ligula, eget, condimentum diam ligula eum
+                        tellus.
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, exercitationem, laboriasam, modi
+                        non quisqam voluptas accusamus numquam ipsum reiciendis saepe veniam cupiditate explicabo autem.
+                        Repudiandae tempore dolore deserunt nemo voluptatem consectetur explicabo autem. Repudiandae
+                        tempore dolore deserunt nemo voluptatem consectetur aspernatur expedita aliquid iste illo enim
+                        molestias vel animi quod .
+                    </p>
+                </div>
+                <div>
+                    <img src="images/screen.avif" alt="" />
+                </div>
+            </div>
+            <div class="skill box">
+                <hr>
+                <button class="button" id="services">SERVICES</button>
+                <div class="flex">
+                    <div class="known">
+                        <i class="fa-solid fa-bolt fa-xl"></i>
+                        <p>The Best Support Ever</p>
+                    </div>
+                    <div class="known">
+                        <i class="fa-solid fa-display fa-xl"></i>
+                        <p>Fully Responsive Design</p>
+                    </div>
+                    <div class="known">
+                        <i class="fa-solid fa-pencil fa-xl"></i>
+                        <p>Unlimited Layouts Options</p>
+                    </div>
+                </div>
+            </div>
+            <div class="manage box">
+                <div class="skillpara">
+                    <div>OUR SKILLS</div>
+                    <p>Integer hendrerit erat sed tellus pretium, eu sodales eros dignissim duis augue eros, molis ac
+                        velit at, rutrum tincidunt ipsum. Morbi semper dui fringilla semper, etiam vulpulate sagittis
+                        vestibulum. Vivamus ac ante cursus, feugiat ipsum et, aliquet justo. lorem ipsum dolor sit amet,
+                        consectectur adipiscing elit, lusto, minima soluta numquam perferendis illum alias omnis commodi
+                        error veritatis a esse nostrum asperiores recusande.</p>
+                </div>
+                <div class="positionskill">
+                    <div>
+                        <div>GRAPHICS 90%</div>
+                    </div>
+                    <div>
+                        <div>HTML CSS 75%</div>
+                    </div>
+                    <div>
+                        <div>WORDPRESS 66%</div>
+                    </div>
+                    <div>
+                        <div>MARKETING 88%</div>
+                    </div>
+                </div>
+            </div>
+            <div class="portfolio box">
+                <hr>
+                <button class="button" id="portfolio">PORTFOLIO</button>
+                <div class="flex">
+                    <div>
+                        <img src="images/fan.webp" alt="logo" />
+                        <p>FANTASY</p>
+                    </div>
+                    <div>
+                        <img src="images/bot.webp" alt="logo" />
+                        <p>BOTANY</p>
+                    </div>
+                    <div>
+                        <img src="images/ni.webp" alt="logo" />
+                        <p>UNIVERSE</p>
+                    </div>
+                    <div>
+                        <img src="images/cha.webp" alt="logo" />
+                        <p>CHANNEL</p>
+                    </div>
+                    <div>
+                        <img src="images/dra.webp" alt="logo" />
+                        <p>DRAGONFLY</p>
+                    </div>
+                    <div>
+                        <img src="images/tit.webp" alt="logo" />
+                        <p>TITANIUM</p>
+                    </div>
+                </div>
+                <div><button class="button">LOAD MORE</button></div>
+            </div>
+            <div class="contact box">
+                <hr>
+                <button class="button" id="contact">CONTACT</button>
+                <input type="checkbox" id="google">
+                <label for="google">
+                    <div class="map">
+                        <img src="images/map.jpg" alt="map" class="red">
+                        <div class="bg"></div>
+                        <img src="images/icons8-full-screen-24.png" alt="screen" class="rightside">
+                        <img src="images/icons8-plus-math-24.png" alt="add" class="bottomup">
+                        <img src="images/icons8-subtract-24.png" alt="sub" class="bottom">
+                        <div class="display">
+                            <h4>Google</h4>
+                            <p>This page can't load Google Maps correctly</p>
+                            <div>
+                                <p>Do you own this website?</p>
+                                <button>OK</button>
+                            </div>
+                        </div>
+                    </div>
+                </label>
+                <div class="grid">
+                    <div>
+                        <label for="name">Name : <span>*</span></label>
+                        <input type="text" id="name" name="kee">
+                    </div>
+                    <div>
+                        <label for="mail">Email : <span>*</span></label>
+                        <input type="text" id="mail" name="kee">
+                    </div>
+                    <div>
+                        <label for="sub">Subject : <span>*</span></label>
+                        <input type="text" id="sub" name="kee">
+                    </div>
+                </div>
+                <div class="dist">
+                    <label>Message : <span>*</span></label>
+                    <textarea name="text" value="text" id="com" rows="10"></textarea>
+                    <button class="button">SEND MESSAGE</button>
+                </div>
+            </div>
+            <div class="end ">
+                <div class="endbox">
+                    <div><i class="fa-brands fa-facebook-f"></i></div>
+                    <div><i class="fa-brands fa-twitter"></i></div>
+                    <div><i class="fa-brands fa-instagram"></i></div>
+                    <div><i class="fa-brands fa-linkedin-in"></i></div>
+                    <div><i class="fa fa-wifi" aria-hidden="true"></i></div>
+                </div>
+                <div class="foot">
+                    <p>Copyright &copy; 2015 <span>Flomic</span></p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
